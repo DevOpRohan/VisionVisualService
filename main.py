@@ -146,3 +146,7 @@ async def visual_question_answer_api(userId: str, question: str):
     inputs = f"{image_path},{question}"
     answer = visual_question_answering.inference(inputs)
     return {"answer": answer}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=3000)
